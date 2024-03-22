@@ -65,3 +65,4 @@ while true; do
     log_message "Ping"
     sleep 60
 done
+ghassan
