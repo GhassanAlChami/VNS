@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="stats.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>API Anfrage Test</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #0275d8;
+        }
+        #sendRequest {
+            background-color: #0275d8;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #sendRequest:hover {
+            background-color: #025aa5;
+        }
+        canvas {
+            margin: auto;
+            display: block;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Html wurde von <span id="server-name">Lädt...</span> bereitgestellt</h1>
+
+    <h2>API Anfrage Test</h2>
+
+    <button id="sendRequest">Anfrage Senden</button>
+
+    <div id="responseContainer"></div>
+
+    <h2>Webserver Last</h2>
+    <div id="dockerStats">Lade Docker-Statistiken...</div>
+
+    <script src="script.js"></script>
+    <!--Diagramm Container hier...-->
+    <script src="script.js"></script>
+</body>
+</html>
+
+    <!--Container 1-->
+    <div>
+        <canvas id="65fa5873e5fe" width="400" height="300"></canvas>
+    </div>
+    
+    <!-- Container 2 -->
+    <div>
+        <canvas id="9ddeb7df5409" width="400" height="300"></canvas>
+    </div>
+    
+    <!-- Container 3 -->
+    <div>
+        <canvas id="b13cfccbb813" width="400" height="300"></canvas>
+    </div>
+
+<script>
+    // Erstes Diagramm: Balkendiagramm mit geänderten Farben
+    var data1 = {
+        labels: ['A', 'B', 'C'],
+        datasets: [{
+            label: 'Dataset 1',
+            data: [10, 20, 30],
+            backgroundColor: ['rgba(54, 162, 235, 0.2)'],
+            borderColor: ['rgba(54, 162, 235, 1)'],
+            borderWidth: 1
+        }]
+    };
+
+    // Zweites Diagramm: Linien-Diagramm
+    var data2 = {
+        labels: ['X', 'Y', 'Z'],
+        datasets: [{
+            label: 'Dataset 2',
+            data: [15, 25, 35],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1,
+            fill: false,
+            lineTension: 0.1
+        }]
+    };
+
+    // Drittes Diagramm: Tortendiagramm
+    var data3 = {
+        labels: ['One', 'Two', 'Three'],
+        datasets: [{
+            label: 'Dataset 3',
+            data: [5, 15, 25],
+            backgroundColor: [
+                'rgba(255, 205, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 205, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    // Diagramm erstellen
+    var ctx1 = document.getElementById('65fa5873e5fe').getContext('2d');
+    var chart1 = new Chart(ctx1, {
+        type: 'bar',
+        data: data1,
+    });
+
+    var ctx2 = document.getElementById('9ddeb7df5409').getContext('2d');
+    var chart2 = new Chart(ctx2, {
+        type: 'line',
+        data: data2,
+    });
+
+    var ctx3 = document.getElementById('b13cfccbb813').getContext('2d');
+    var chart3 = new Chart(ctx3, {
+        type: 'pie',
+        data: data3,
+    });
+</script>

@@ -1,0 +1,3 @@
+imagename=image-raccon  
+containername=raccon
+containerpassword=daddeldu
